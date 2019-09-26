@@ -1,0 +1,19 @@
+Recursion - where a method calls itself
+    REQUIREMENTS
+        1. Base Condition/Terminates
+        2. Recursive Call
+        3. Parameter advances towards termination
+
+        rRemove Dap(curr) {
+            if (curr == null) {
+                return null;
+            } else {
+                curr.next = rRemove(curr.next)
+                if (curr.next != null && curr.data == curr.next.data) {
+                    return curr.next;
+                } else {
+                    return curr;
+                }
+            }
+
+        }

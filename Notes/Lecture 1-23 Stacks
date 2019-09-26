@@ -1,0 +1,19 @@
+Stacks
+    - LIFO (Last In First Out)
+    - Push() puts data into the data structure
+    - Pop() gets the data at the top of the data structure
+    - You can implement a stack using SLL
+        - Only Need a Head reference
+        - AddToFront() == push()
+        - RemoveFromFront() == pop()
+        - isEmpty() if head == null
+        - head to null == clear stack
+              ___ARRAYLIST____|_______LINKEDLIST_______
+     push    |  O(1)          |     O(1)                |
+     pop     |  O(1)          |     O(1)                |
+     isEmpty |  O(1)          |     O(1)                |
+     top     |  O(1)          |     O(1)                |
+     resize  |                |     O(n)                |
+
+Queues
+    - FIFO

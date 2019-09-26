@@ -1,0 +1,61 @@
+Big O
+    -Measure efficiency
+    -Time Complexity
+        -Runtime for code relative to input size
+    -Spacial Complexity
+        -extra space needed in code relative to input size
+
+JUnits
+    -Framework fir testing code in java
+    -@before
+        -setup for testing
+        -initialize variables and objects needed for testing
+        -runs before each test
+    -@test
+        -test functionality of your code
+
+ArrayList
+    -resizes dynamically
+    -must start at index 0 and no gaps in the array
+     _______________________________
+    |       | Front | Middle | Back |
+    |Adding | O(n)  | O(n)   | O(1)*| * - amortization means each time operation
+    |Remove | O(n)  | O(n)   | O(1) |       occurs, it becomes more rare
+    |Access | O(1)  | O(1)   | O(1) |
+    ---------------------------------
+    - Good at accessing data
+    - Bad at adding data
+
+LinkedList
+    -Made up of nodes that contain data and a reference to the next node
+        or if it is a doubly LinkedList, it also has a reference to the
+        previous node.
+    -Dynamically allocates data
+    -Creating & Destroying nodes as needed
+     _______________________________________
+    |               | Front | Middle | Back |
+    |Adding w/tail  | O(1)  | O(n)   | O(1) |
+    |Adding wo/tail | O(1)  | O(n)   | O(n) |
+    |Remove w/tail  | O(1)  | O(n)   | O(n) |
+    |Remove wo/tail | O(1)  | O(n)   | O(n) |
+    |Access w/tail  | O(1)  | O(n)   | O(1) |
+    |Access wo/tail | O(1)  | O(n)   | O(n) |
+    -----------------------------------------
+    -to add a node
+        1. create the node
+        2. make new node point to next node
+        3. make old node point to new node
+    - Good at adding data
+    - Bad at accessing data
+
+Singly Circularly LinkedList
+    - LL where the last node points to the first node
+    - addToBack O(1)
+        1. add the new node in after the head (refer to LL)
+        2. swap the data in the new node with data in the head
+        3. change what node the head is pointing to
+    - addToFront O(1)
+        - same as addToBack but don't change where head is pointing
+    -removeFromFront O(1)
+        - switch the data in first node with second node
+        - point the head node to node after the second node

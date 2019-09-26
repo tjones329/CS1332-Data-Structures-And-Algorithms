@@ -1,0 +1,62 @@
+errors
+    - not setting index 0 to null
+    - missing +1 with left/right children
+    - using backingarray[index] == null to check if node exists
+        do index > size instead
+    - off by one when copying from the
+        arraylist in the build-heap constructor mostly because of the +1 shift
+
+Heaps
+    - Structure
+        - complete binary trees
+    - Order
+        - min heap
+            - root = smallest element
+            - nodes data < childrens data
+        - max heap
+            - root = largest element
+            - nodes data > childrens data
+    - Implementation
+        - Array index 0 set to null
+            * Node @ index i
+                parent = i / 2
+                floor i / 2
+            left child = 2 * i
+            right child = (2 * i) + 1
+    - Adding
+        - Add data to next available spot(size + 1)
+        perform upHeap algorithm
+            - index with data in it and check if parent child
+                relationship is valid
+            - compare data w/ parent and if order property is violated, then swap
+                and continue swapping until order property is not violated.
+    - Accessing
+        - O(1)
+            - accessing the smallest element in a minHeap
+            - accessing the largest element in a maxHeap
+    - Removing
+        - only remove the root
+        - maintain the shape property
+            - remove root(make sure to save its data)
+            - replace roots data w/ last nodes data
+        - maintain order property
+            - compare new roots data w/ children
+            - heapify down/ downHeap
+                - minheap swap if min(leftchild, rightchild) < curr's data
+                - maxheap swap if max(leftchild, rightchild) > curr's data
+            - stop swapping
+                - Order property satisfied
+                - branch leaf nodes
+    - BuildHeap
+        - Given an array of random data, turn it in to a heap
+            for (i = size/2 to 1) {
+                downHeap(i)
+            }
+    - Efficiencies
+        - Worst Case comlexity
+            buildHeap O(n)
+            upHeap/heapifyUp O(log n)
+            downHeap/heapifyDown O(log n)
+            adding O(log n)
+            removing O(log n)
+            accessing(at the root) O(1)

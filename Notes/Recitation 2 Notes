@@ -1,0 +1,58 @@
+Debugging in IntelliJ
+    - Figure out which method is breaking
+    - set a break point
+    - start debugger
+        - Step into if method fails
+        - Step over if method passes
+    - Can see see state of variables and data structures
+
+Doubly Linked Lists
+    - Nodes have data, next, and previous
+    - head--->[][  ][] <---> [][  ][] <---> [][  ][] <---tail example node structure
+    - always have a tail pointer
+    _______________________________
+    |       | Front | Middle | Back |
+    |Adding | O(1)  | O(n)   | O(1) |
+    |Remove | O(1)  | O(n)   | O(1) |
+    |Access | O(1)  | O(n)   | O(1) |
+    ---------------------------------
+
+Abstract Data Types and data structures
+    - List, Stack, and Queue
+        - contain features that all of those data types must contain
+        -
+    - ArrayList, singly and doubly linked list, array backed stack, linked list backed stack
+        - concrete implementations of abstract data types
+    ________________________________________________________
+    |              | ArrayList | SLL w Tail | SLL w/o tail |
+    |Access        |   O(1)    |    O(n)    |     O(n)     |
+    |add/rmv front |   O(n)    |    O(1)    |     O(1)     |
+    |rmv back      |   O(1)    |    O(1)    |     O(n)     |
+    |add back      |   O(1)*   |    O(1)    |     O(n)     |
+    |memory usage  |   least   |    More    |     More     |
+    --------------------------------------------------------
+
+Stacks
+    - Abstract Data Type
+    - LIFO (Last in First Out)
+    - Pringles can
+    - Pop() - removes first element from the stack
+    - Push(T data) - adds an element to the top of the stack
+    - Peek() - returns the data at the top of the stack
+    - Two kinds of stacks array-backed and linked list back
+        ___ARRAYLIST____|_______LINKEDLIST_______
+       |  O(1) add*/rmv | O(1) add/rmv singlyLL  |
+       |  less memory   | more memory            |
+
+Queues
+    - Abstract Data Type
+    - FIFO (First in First Out)
+    - enqueue() - add an element to the queue
+    - dequeue() - remove an element from the queue
+    - peak() - will show whatever element is at the front of the queue
+    __________________________________________________
+    |        | Front | SLL w/ tail |   DLL w/ tail   |
+    |enqueue | back  |    back     |    either       |
+    |dequeue | front |    front    |opposite of first|
+    --------------------------------------------------
+    arr[(front + size)/ arr.length] = data

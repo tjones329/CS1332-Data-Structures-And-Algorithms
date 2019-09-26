@@ -1,0 +1,36 @@
+Trees
+    - Have a root instead of a head
+    - Can only move in a single direction
+    - No Cycles
+    - Highly recursive
+    - Abstract Data Type
+
+Catergories Trees
+    - Shape
+    - Order
+    - Properties
+
+Different types of Trees
+    - 2-4 trees
+    - Binary Trees
+        - Heaps
+        - Binary Search Trees
+        - AVLs
+        - Splay
+
+Tree add pseudocode
+    public void add(data) {
+        root = addH(data,root)
+    }
+
+    private node addH(data,curr) {
+        //base
+        (curr == null)
+            return new node(data);
+        (data > curr.data)
+            setRight(addH(data, curr.right))
+            return curr;
+        (data < curr.data)
+            setLeft(addH(data, curr.left))
+            return curr;
+    }

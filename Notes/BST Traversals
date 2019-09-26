@@ -1,0 +1,59 @@
+BST Traversals
+    Depth Traversals
+        - Recursive
+        - If (node == null) {return} - base case
+        - C = add node's data to output
+        - L = recurse to node's left child
+        - R = recurse to node's right child
+        PREORDER - CLR
+        POSTORDER - LRC
+        INORDER - LCR
+
+          Pre T Post
+             In
+    Breadth Traversals
+        - LEVEL ORDERnon
+            -recursive-use queue
+            -order nodes by depth
+
+ITERABLE VS ITERATOR
+
+ITERABLE
+    Java.Lang.Iterable
+    - Data Structure needs to implement iterable if you want to traverse using iterator
+    - iterator()
+ITERATOR
+    Import Java.Util.Iterator
+    implement Iterator in your special Iterator class
+    - next() and hasNext()
+    - remove() safely remove data
+
+    public class SLL<T> implements Iterable<T> {
+        public SLLIterator<T> iterator() {
+            return new SLLIterator<T>();
+        }
+        private class SLLIterator<T> implements Iterator<T> {
+            hasNext() - checks if the current data != null
+            next() - returns data in curr node, curr = curr.next
+        }
+    }
+
+    SLL<String> Names = new SLL<>();
+
+            EXPLICIT             |          IMPLICIT
+    -Iterator <- SLLIterator     |   For (String s: Names)
+    -it = Names iterator()       |
+     while(it.hasNext())         |
+        print(it.next)           |
+
+Heap Implementation
+    Array - Why?
+        - no gaps between children
+        - index 0 ==> ignore this spot in the array(always null)
+        - a node is at index i
+            parent is at index floor(i/2)
+            left child is at index (i * 2)
+            right child is at index (i * 2) + 1
+        - less memory
+        - implement recursively/iteratively
+            - buildheap function is efficient this way

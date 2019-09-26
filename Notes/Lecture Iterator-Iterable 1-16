@@ -1,0 +1,47 @@
+Iterator/Iterable
+    - Iterable is implicit, Iterator is explicit
+
+    //implementation of Iterator and Iterable
+    import java.lang.Iterator
+    import java.util.Iterator
+
+    public class LinkedList implements iterable<Type>{
+        private Node<Type> head;
+
+        public LL() {head = null;}
+
+        public Iterator<Type> iterator() { return new LLit(); }
+
+        private class LLit implements Iterator<Type> {
+            private Node<Type> curr;
+
+            private LLit() { curr = head; }
+
+            public boolean hasNext() { return curr != null; }
+
+            public Type Next() {
+                Node<Type> tmp = null;
+                if(hasNext()) {
+                    tmp = curr;
+                    curr = curr.next;
+                    return tmp.data;
+                } return null;
+            }
+        }
+    }
+
+    public static void main {
+        LinkedList<String> courses = new LinkedList();
+            //add nodes
+
+            //use Iterable, the implicit iterator
+            for(String acourse: courses) {
+                System.out.println(acourse);
+            }
+
+            //use Iterator explicitly
+            Iterator<String> corse = courses.iterator();
+            while(corse.hasNext()) {
+                System.out.Println(corse.next);
+            }
+    }
